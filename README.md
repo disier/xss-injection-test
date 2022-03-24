@@ -33,4 +33,12 @@ We will use an empty HTML page to host our injection
   </div>
 </body>
 </html>
+
+## Code to inject
+The golar is to inject the code of this file on the page:
+```
+https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js"
+```
+
+# First try
 ```
