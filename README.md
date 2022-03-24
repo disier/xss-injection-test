@@ -7,9 +7,8 @@ The target page must hace JQuery libraries activated
 ## Target paget
 We will use an empty HTML page to host our injection
 
-`
-<!DOCTYPE html>
-<html lang="en">
+`<!DOCTYPE html>`
+`<html lang="en">`
 
 <head>
   <meta charset="UTF-8" />
