@@ -7,7 +7,7 @@ The target page must hace JQuery libraries activated
 ## Target paget
 We will use an empty HTML page to host our injection
 
-``
+`
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,5 +34,4 @@ We will use an empty HTML page to host our injection
 </body>
 
 </html>
-
-``
+`
