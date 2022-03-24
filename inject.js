@@ -1,7 +1,7 @@
 console.log('Owned');
 
 $('body').append('<!-- Button trigger modal -->' +
-'<button id="btn-show-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">' +
+'<button id="btn-show-modal" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="margin-top: 10px">' +
 '  Launch demo modal' +
 '</button>' +
 '' +
@@ -29,4 +29,4 @@ $('body').append('<!-- Button trigger modal -->' +
 
 setTimeout(function(){
   $('#btn-show-modal').click();
-
+});
