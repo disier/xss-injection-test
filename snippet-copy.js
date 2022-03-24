@@ -8,7 +8,7 @@ This file contains the code snippet needed to be coded on the Developer Console
 
 function dynamicallyInsertCSP() {
         let metaElement = document.createElement("meta");
-        metaElement.setAttribute("content", "default-src 'self' 'unsafe-inline' *.raw.githubusercontent.com;")
+        metaElement.setAttribute("content", "default-src 'self' 'unsafe-inline' *.githubusercontent.com;")
         metaElement.setAttribute("http-equiv", "Content-Security-Policy");
         document.head.appendChild(metaElement);
 };
