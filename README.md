@@ -7,8 +7,9 @@ The target page must hace JQuery libraries activated
 ## Target paget
 We will use an empty HTML page to host our injection
 
-`<!DOCTYPE html>`
-`<html lang="en">`
+```
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -31,6 +32,5 @@ We will use an empty HTML page to host our injection
     <h2>Simple page with jqeury and bootstrap activated</h2>
   </div>
 </body>
-
 </html>
-`
+```
