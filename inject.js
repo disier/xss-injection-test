@@ -1,5 +1,7 @@
 console.log('Owned');
+alert('This alert is executed from an externally loaded JavaScript file')
 
+/**
 const div = document.createElement("div");
 div.style.position = 'absolute';
 div.style.left = '10px';
@@ -17,6 +19,7 @@ para.appendChild(node);
 div.appendChild(para);
 
 document.getElementsByTagName('body')[0].appendChild(div);
+**/
 
 /**
 $('body').append('<!-- Button trigger modal -->' +
