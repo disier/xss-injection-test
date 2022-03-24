@@ -115,3 +115,5 @@ in this case we get the console message:
 owned
 ```
 
+This method works event wiouth creating the META tag!
+
