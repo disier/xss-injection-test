@@ -35,7 +35,8 @@ We will use an empty HTML page to host our injection
 </html>
 
 ## Code to inject
-The golar is to inject the code of this file on the page:
+The goal is to inject the code of this file on the page:
+
 ```
 https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js
 ```
@@ -58,7 +59,9 @@ VM304:6 Cross-Origin Read Blocking (CORB) blocked cross-origin response https://
 ```
 
 ## Second try. Add dinamically CSP
+
 We execute in console
+
 ```
 function dynamicallyInsertCSP() {
         let metaElement = document.createElement("meta");
@@ -71,6 +74,7 @@ dynamicallyInsertCSP();
 ```
 
 And we check we have this tag at the HEAD:
+
 ```
 <meta content="default-src 'self' 'unsafe-inline' *.githubusercontent.com;" http-equiv="Content-Security-Policy">
 ```
