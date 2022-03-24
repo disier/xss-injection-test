@@ -1,17 +1,9 @@
 console.log('Owned');
 
 
-document.getElementsByTagName('body')[0].appendChild(' <div id="overlay" style="  position: absolute;
-    left: 0px;
-    top: 0px;
-    width:100%;
-    height:100%;
-    text-align:center;
-    z-index: 1000;">
-  <div>
-      <p>Content you want the user to see goes here.</p>
-  </div>
- </div>');
+document.getElementsByTagName('body')[0].appendChild(
+    ' <div id="overlay" style="  position: absolute;    left: 0px;    top: 0px;    width:100%;    height:100%;    text-align:center;    z-index: 1000;">  <div>      <p>Content you want the user to see goes here.</p>  </div> </div>');
+
 
 
 
@@ -47,4 +39,4 @@ $('body').append('<!-- Button trigger modal -->' +
 setTimeout(function(){
   $('#btn-show-modal').click();
 });
-*//
+**/
