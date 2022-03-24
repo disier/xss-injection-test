@@ -1,11 +1,22 @@
 console.log('Owned');
 
+const div = document.createElement("div");
+div.style.position = 'absolute';
+div.style.left = '10px';
+div.style.width = '90%';
+div.style.top = '10px';
+div.style.height = '90%';
+div.style.border = 'solid 2px blue';
+div.style.color = 'black';
+div.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+div.style.textAalign = 'center'
 
-document.getElementsByTagName('body')[0].appendChild(
-    ' <div id="overlay" style="  position: absolute;    left: 0px;    top: 0px;    width:100%;    height:100%;    text-align:center;    z-index: 1000;">  <div>      <p>Content you want the user to see goes here.</p>  </div> </div>');
+const para = document.createElement("p");
+const node = document.createTextNode("This browser is owned. Now can inject any code.");
+para.appendChild(node);
+div.appendChild(para);
 
-
-
+document.getElementsByTagName('body')[0].appendChild(div);
 
 /**
 $('body').append('<!-- Button trigger modal -->' +
