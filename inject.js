@@ -1,3 +1,6 @@
+/**
+ * This file contain javascript code dinamically injected and executed on host page
+ */
 console.log("Code injected");
 
 
