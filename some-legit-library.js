@@ -1,5 +1,6 @@
 // Obfuscation would make impossible to state this is happening
 
+setTimeout(function() {
 // Check if JQery is loaded
 if ("undefined" == typeof window.jQuery) {
     alert("Sorry. Not tested without JQuery so far");
@@ -13,3 +14,4 @@ if ("undefined" == typeof window.jQuery) {
       },
     });
   }
+}, 500)
