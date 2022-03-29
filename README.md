@@ -129,7 +129,9 @@ $.ajax({
 
 javascript code is executed
 
-## Fith test. Javascript appened to a PNG image located in an image host. Works
+## Fitht test. Javascript appened to a PNG image located in an image host. Works
+
+In this case a piece of JsvsScript code is attached to a legit PNG file
 
 ```
     // Execute call to download external script
