@@ -40,6 +40,7 @@ The goal is to inject the code of this file on the page:
 
 ```
 https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js
+
 ```
 
 # First try (Brave)
