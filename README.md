@@ -34,6 +34,7 @@ We will use an empty HTML page to host our injection
   </div>
 </body>
 </html>
+```
 
 ## Code to inject
 The goal is to inject the code of this file on the page:
