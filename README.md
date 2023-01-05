@@ -1,6 +1,6 @@
 # xss-injection-test
 
-This project is a prof-og-concept of dynamic Javascript libraries injection for different browsers.
+This project is a prof-of-concept of dynamic Javascript libraries injection for different browsers.
 
 The target page must hace JQuery libraries activated
 
@@ -41,7 +41,6 @@ The goal is to inject the code of this file on the page:
 ```
 https://raw.githubusercontent.com/disier/xss-injection-test/main/inject.js
 
-```
 
 # First try (Brave)
 
